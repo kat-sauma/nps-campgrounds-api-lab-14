@@ -31,16 +31,15 @@ describe('app routes', () => {
       return client.end(done);
     });
 
-    test.skip('returns campgrounds', async () => {
+    test('returns campgrounds', async () => {
 
-      const expectation = 'https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=UM1htZTK0YHdob1yBhuKr9OtFUmHZsULbvqXr4mJ';
-
-      const data = await fakeRequest(app)
+      await fakeRequest(app)
         .get('/campgrounds')
         .expect('Content-Type', /json/)
         .expect(200);
-
-      expect(data.body).toEqual(expectation);
     });
+
+
+
   });
 });
