@@ -19,11 +19,11 @@ async function run() {
                 );           
                 CREATE TABLE favorites (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    fullName VARCHAR(512) NOT NULL,
+                    full_name VARCHAR(512) NOT NULL,
                     description VARCHAR(512) NOT NULL,
                     url VARCHAR(512) NOT NULL,
-                    directionsInfo VARCHAR(512) NOT NULL,
-                    directionsUrl VARCHAR(512) NOT NULL,
+                    directions_info VARCHAR(512) NOT NULL,
+                    directions_url VARCHAR(512) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);

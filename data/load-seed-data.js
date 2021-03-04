@@ -27,29 +27,29 @@ async function run() {
 
     await Promise.all(
       favorites.map(({
-        fullName,
+        full_name,
         description,
         url,
-        directionsInfo,
-        directionsUrl,
+        directions_info,
+        directions_url,
         owner_id
       }) => {
         return client.query(`
                     INSERT INTO favorites (
-                      fullName,
+                      full_name,
                       description,
                       url,
-                      directionsInfo,
-                      directionsUrl,
+                      directions_info,
+                      directions_url,
                       owner_id)
                     VALUES ($1, $2, $3, $4, $5, $6);
                 `,
           [
-            fullName,
+            full_name,
             description,
             url,
-            directionsInfo,
-            directionsUrl,
+            directions_info,
+            directions_url,
             owner_id
           ]);
       })
