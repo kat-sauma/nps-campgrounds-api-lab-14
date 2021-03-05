@@ -31,8 +31,7 @@ async function run() {
         description,
         url,
         directions_info,
-        directions_url,
-        owner_id
+        directions_url
       }) => {
         return client.query(`
                     INSERT INTO favorites (
@@ -50,7 +49,7 @@ async function run() {
             url,
             directions_info,
             directions_url,
-            owner_id
+            user.id
           ]);
       })
     );
